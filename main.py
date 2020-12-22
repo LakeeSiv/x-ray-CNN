@@ -29,21 +29,37 @@ import random
 import cv2
 import matplotlib.pyplot as plt
 BATCH_SIZE = 32
-IMG_SIZE = 64*2
+IMG_SIZE = 64
+SAMPLE_SIZE = 20
 
 train_set = []
 
-for im in IMG_P:
+
+for im in random.sample(IMG_P,int(SAMPLE_SIZE/2)):
+    
     image = cv2.imread(im, cv2.IMREAD_GRAYSCALE)
     image = cv2.resize(image, (IMG_SIZE,IMG_SIZE))
     
     train_set.append([image,1])
-    
-for im in IMG_N:
+   
+
+for im in random.sample(IMG_N,int(SAMPLE_SIZE/2)):
+  
     image = cv2.imread(im, cv2.IMREAD_GRAYSCALE)
     image = cv2.resize(image, (IMG_SIZE,IMG_SIZE))
     
     train_set.append([image,0])
+   
 
 random.shuffle(train_set)
 
+
+X,y=[],[]
+
+for features,label in train_set:
+    X.append(features)
+    y.append(label)
+
+X = np.array(X).reshape(-1,IMG_SIZE,IMG_SIZE,1)
+
+print(y)
