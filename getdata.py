@@ -22,7 +22,7 @@ IMG_SIZE = 64
 train_set = []
 
 #get train data
-def make_traindata(condition = False, LOC=0):
+def make_data(condition = False, LOC=0):
     if condition == True:
         for category in CATEGORIES:
             path = LOC + category +"/"
@@ -54,5 +54,5 @@ def make_traindata(condition = False, LOC=0):
         np.save(f"y_{sub}.npy",y)
 
 
-make_traindata(condition = False, LOC = TEST_LOC)
+make_data(condition = False, LOC = TEST_LOC)
 
