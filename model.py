@@ -1,3 +1,31 @@
+
+
+
+
+
+"""
+Model was first created in the mode.py file, and Keras Tuning as beggining to be implemented in this file.
+However due to the large processing power required to perform Tuning, all this code was moved to and updated 
+to the colabKerasTuning.ipynb file.
+
+This file was run on Google Colab, the key benefit was that it enabled me to use GPU acceleration,
+hence significantly reduced the tuning time
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import numpy as np
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
@@ -55,11 +83,3 @@ tuner.search(X_train, y_train,epochs=EPOCHS,validation_split=0.1)
 
 best_model = tuner.get_best_models()[0]
 best_mode.save("./best_model")
-
-"""
-model.fit(X_train,y_train, epochs = EPOCHS, batch_size=32,validation_split=0.1)
-
-test_accuracy = model.evaluate(X_test,y_test, batch_size = 32)
-
-print(f'Testing Accuracy: {(test_accuracy[1] * 100)}%')
-"""
