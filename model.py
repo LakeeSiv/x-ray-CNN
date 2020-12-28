@@ -4,7 +4,7 @@
 
 
 """
-Model was first created in the mode.py file, and Keras Tuning as beggining to be implemented in this file.
+Model was first created in the model.py file, and Keras Tuning was beggining to be implemented in this file.
 However due to the large processing power required to perform Tuning, all this code was moved to and updated 
 to the colabKerasTuning.ipynb file.
 

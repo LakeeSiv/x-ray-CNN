@@ -28,7 +28,7 @@ def make_data(condition = False, LOC=0):
             path = LOC + category +"/"
             label = CATEGORIES.index(category)
             for img in glob(path + "*.jpeg"):
-                image = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
+                image = cv2.imread(img, cv2.IMREAD_GRAYSCALE) #<------ Convert to greyscale
                 image_sized = cv2.resize(image,(IMG_SIZE,IMG_SIZE))
 
                 train_set.append([image_sized,label])
